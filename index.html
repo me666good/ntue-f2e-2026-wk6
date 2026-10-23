@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vegetables</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div class="page-wrapper">
+
+    <!-- 1. Header (1122*60px) -->
+    <header class="header-bar">
+      <!-- Vegetables: 253*60px -->
+      <div class="logo-text">Vegetables</div>
+
+      <!-- 右邊icon總尺寸: 208*24px -->
+      <div class="header-controls">
+        <div class="social-links">
+          <!-- 兩個 icon: 24*24px -->
+          <a href="#" class="social-btn">
+            <img src="images/icon_fb.png.png" alt="Facebook">
+          </a>
+          <a href="#" class="social-btn">
+            <img src="images/icon_ig.png.png" alt="Instagram">
+          </a>
+        </div>
+
+        <div class="v-divider"></div>
+
+        <div class="auth-links">
+          <!-- Login 框: 62*27px, 字: 46*19px -->
+          <a href="#login" class="btn-login">
+            <span>LOGIN</span>
+          </a>
+          <!-- Join 框: 49*27px, 字: 33*19px -->
+          <a href="#join" class="btn-join">
+            <span>JOIN</span>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- 2. Nav 區域 (1120*44px) -->
+    <nav class="nav-bar">
+      <ul class="nav-list">
+        <li><a href="#home" class="nav-home">Home</a></li>
+        <li><a href="#" onclick="openAboutModal(); return false;" class="nav-about">About Us</a></li>
+        <li><a href="#vegetables" class="nav-veg">Vegetables</a></li>
+        <li><a href="#" onclick="openModal(); return false;" class="nav-online">Online</a></li>
+        <li><a href="#contact" class="nav-contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- 3. Body: 1120*829px -->
+    <main class="main-body">
+      <!-- 中間大圖：1120*448px -->
+      <section class="hero-banner" id="home">
+        <img src="images/img_main_pumpkin.png" alt="Yellow Squash">
+      </section>
+
+      <!-- 下方排版：左右兩側各 528*337px -->
+      <section class="bottom-section" id="vegetables">
+        <!-- 左下角 vegetables 共：528*337px -->
+        <div class="veg-section">
+          <!-- 綠框：528*45px, 蔬菜字：97*24px -->
+          <div class="veg-header">
+            <div class="veg-title">Vegetables</div>
+          </div>
+          <!-- 三個卡片區 -->
+          <div class="veg-cards">
+            <!-- 卡片 1 (圖: 165*140, 純色底: 165*123, 字框: 155*48) -->
+            <div class="veg-card-item">
+              <img src="images/img_vegetables_carrot.png" alt="Carrots">
+              <div class="veg-card-textbg">
+                <div class="veg-card-textbox">
+                  Crisp, sweet, and naturally grown organic carrots for your daily nutrition.
+                </div>
+              </div>
+            </div>
+            <!-- 卡片 2 -->
+            <div class="veg-card-item">
+              <img src="images/img_vegetables_corn.png" alt="Corn">
+              <div class="veg-card-textbg">
+                <div class="veg-card-textbox">
+                  Freshly prepared seasonal corn, ready for quick and healthy everyday meals.
+                </div>
+              </div>
+            </div>
+            <!-- 卡片 3 -->
+            <div class="veg-card-item">
+              <img src="images/img_vegetables_pepper.png" alt="Yellow Pepper">
+              <div class="veg-card-textbg">
+                <div class="veg-card-textbox">
+                  Farm-fresh vibrant greens packed with rich fiber and natural vitamins.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 右下角 contact 共：528*337px -->
+        <div class="contact-section" id="contact">
+          <!-- 綠框：528*45px -->
+          <div class="contact-header">
+            <div class="contact-title">Contact</div>
+          </div>
+          <!-- 大文字背景純色圖：528*263px -->
+          <div class="contact-card-bg">
+            <!-- 上文字：496*130px -->
+            <div class="contact-top-text">
+              For questions regarding organic produce, weekly family subscription boxes, farm partnerships, or corporate bulk orders, our customer care team is always here to help you choose the freshest seasonal goods.
+              <br><br>
+              Delivery Notice: Orders placed before 14:00 will be harvested and dispatched the next morning via cold-chain courier to guarantee peak farm freshness.
+            </div>
+            <!-- 線：496*0 -->
+            <div class="contact-divider"></div>
+            <!-- 下文字：496*36px -->
+            <div class="contact-bottom-text">
+              <div>E-mail : Vegetables@aaabbccc.com</div>
+              <div>PHONE : +886-123-456-789</div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+  </div>
+
+  <!-- 4. Footer (框：1440*60px，字：313*18px) -->
+  <footer class="footer-bar">
+    <div class="footer-text">
+      Copyrights 2017 vegetables club / Design by Vegetables
+    </div>
+  </footer>
+<!-- 自訂提示彈窗 -->
+  <div id="customModal" class="modal-overlay">
+    <div class="modal-box">
+      <h3>線上訂購通知</h3>
+      <p>線上訂購系統籌備中<br>訂購與配送請洽客服專線：<strong>+886-123-456-789</strong></p>
+      <button type="button" class="modal-btn" onclick="closeModal()">確定</button>
+    </div>
+  </div>
+
+  <script>
+    function openModal() {
+      document.getElementById('customModal').style.display = 'flex';
+    }
+    function closeModal() {
+      document.getElementById('customModal').style.display = 'none';
+    }
+  </script>
+  <!-- About Us 專屬彈窗 -->
+  <div id="aboutModal" class="modal-overlay">
+    <div class="modal-box">
+      <h3>關於我們 About Us</h3>
+      <p style="text-align: left; margin-bottom: 20px;">
+        我們堅持與土地友善共生，嚴選當季新鮮蔬果，全程採自然無毒農法耕作。<br><br>
+        從晨曦採收到冷鏈低溫配送，嚴格把關每道工序，只為將純淨、安心且充滿生命力的產地美味，原汁原味送到您的餐桌。
+      </p>
+      <button type="button" class="modal-btn" onclick="closeAboutModal()">確定</button>
+    </div>
+  </div>
+
+  <script>
+    function openAboutModal() {
+      document.getElementById('aboutModal').style.display = 'flex';
+    }
+    function closeAboutModal() {
+      document.getElementById('aboutModal').style.display = 'none';
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,652 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700;900&display=swap');
+
+/* 平滑滾動與錨點對齊補償 */
+html {
+  scroll-behavior: smooth; /* 滑動動畫效果 */
+}
+
+/* 讓錨點跳轉時上方自動保留 20px 空間，避免標題緊貼瀏覽器邊緣 */
+[id] {
+  scroll-margin-top: 20px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Noto Sans', sans-serif;
+}
+
+body {
+  background-color: #EDF2C5; /* background */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* 主內容版心封裝 */
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 30px;
+}
+
+/* --- 1. Header 區域 (1122*60px) --- */
+.header-bar {
+  width: 1122px;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+/* Vegetables: 253*60px, head1: 44px Black */
+.logo-text {
+  width: 253px;
+  height: 60px;
+  font-size: 44px;
+  font-weight: 900;
+  color: #778A50; /* primary */
+  display: flex;
+  align-items: center;
+  line-height: 1;
+}
+
+/* 右邊控制列總尺寸: 208*24px */
+.header-controls {
+  width: 208px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.social-links {
+  display: flex;
+  gap: 8px;
+}
+
+/* 兩個 icon: 24*24px */
+.social-btn {
+  width: 24px;
+  height: 24px;
+  display: block;
+}
+
+.social-btn img {
+  width: 24px;
+  height: 24px;
+  object-fit: cover;
+  display: block;
+}
+
+.v-divider {
+  width: 1px;
+  height: 20px;
+  background-color: #778A50;
+}
+
+.auth-links {
+  display: flex;
+  gap: 6px;
+}
+
+/* Login 框: 62*27px */
+.btn-login {
+  width: 62px;
+  height: 27px;
+  border: 1px solid #778A50;
+  color: #778A50;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* login 字: 46*19px, text2: 12px */
+.btn-login span {
+  width: 46px;
+  height: 19px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* Join 框: 49*27px */
+.btn-join {
+  width: 49px;
+  height: 27px;
+  border: 1px solid #778A50;
+  color: #778A50;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* join 字: 33*19px, text2: 12px */
+.btn-join span {
+  width: 33px;
+  height: 19px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* 按鈕 hover & active 變色 */
+.btn-login:hover,
+.btn-join:hover {
+  background-color: #778A50;
+  color: #ffffff;
+}
+
+.btn-login:active,
+.btn-join:active {
+  background-color: #5c6c3c;
+  border-color: #5c6c3c;
+  color: #ffffff;
+}
+
+/* --- 2. Nav 區域 (1120*44px) --- */
+.nav-bar {
+  width: 1120px;
+  height: 44px;
+  background-color: #778A50; /* primary */
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  margin-bottom: 10px;
+}
+
+.nav-list {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  gap: 32px;
+}
+
+/* text1: 14px Bold */
+.nav-list a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 6px;
+  transition: all 0.2s ease;
+}
+
+.nav-home { width: 49px; height: 25px; }
+.nav-about { min-width: 75px; width: auto; white-space: nowrap; height: 24px; }
+.nav-veg { width: 95px; height: 24px; }
+.nav-online { width: 55px; height: 24px; }
+.nav-contact { width: 65px; height: 24px; }
+
+/* 導覽列選單 hover & active 變色 */
+.nav-list a:hover {
+  background-color: #637341;
+  color: #F7F6DA;
+}
+
+.nav-list a:active {
+  background-color: #4f5d34;
+  color: #ffffff;
+}
+
+/* --- 3. Body 內容區 (1120*829px) --- */
+.main-body {
+  width: 1120px;
+  height: 829px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* 中間大圖：1120*448px */
+.hero-banner {
+  width: 1120px;
+  height: 448px;
+  overflow: hidden;
+}
+
+.hero-banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* 下方左右排版容器 (528px + 64px 間距 + 528px = 1120px) */
+.bottom-section {
+  width: 1120px;
+  height: 337px;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* 左下角 vegetables 共：528*337px */
+.veg-section {
+  width: 528px;
+  height: 337px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* 綠框：528*45px, head2: 16px Black */
+.veg-header {
+  width: 528px;
+  height: 45px;
+  background-color: #778A50;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+}
+
+/* 蔬菜字：97*24px */
+.veg-title {
+  width: 97px;
+  height: 24px;
+  font-size: 16px;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+}
+
+/* 三個蔬菜卡片水平排列 (165px * 3 + 16.5px 間距 * 2 = 528px) */
+.veg-cards {
+  width: 528px;
+  height: 263px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.veg-card-item {
+  width: 165px;
+  height: 263px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 三個蔬菜圖：165*140px */
+.veg-card-item img {
+  width: 165px;
+  height: 140px;
+  object-fit: cover;
+  display: block;
+}
+
+/* 三個文字背景純色圖：165*123px, content bg: #F7F6DA */
+.veg-card-textbg {
+  width: 165px;
+  height: 123px;
+  background-color: #F7F6DA;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 三個文字框: 155*48px, text2: 12px Regular, Content Text: #707070 */
+.veg-card-textbox {
+  width: 155px;
+  height: 48px;
+  color: #707070;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.35;
+  display: flex;
+  align-items: center;
+}
+
+/* 右下角 contact 共：528*337px */
+.contact-section {
+  width: 528px;
+  height: 337px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* 綠框：528*45px */
+.contact-header {
+  width: 528px;
+  height: 45px;
+  background-color: #778A50;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+}
+
+.contact-title {
+  width: 97px;
+  height: 24px;
+  font-size: 16px;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+}
+
+/* 右欄：大文字背景純色圖 (528*263px)，內部均勻分配 */
+.contact-card-bg {
+  width: 528px;
+  height: 263px;
+  background-color: #F7F6DA;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* 讓上下兩大區塊自然向兩端分布 */
+  align-items: center;
+}
+
+/* 上文字區塊：高度 140px，讓文字在自己的區域內上下居中 */
+.contact-top-text {
+  width: 496px;
+  height: 140px;
+  color: #707070;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.55;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* 在上半部自己的空間裡垂直置中，不貼線 */
+}
+
+/* 中間分隔線：乾淨橫跨，不額外推擠 */
+.contact-divider {
+  width: 496px;
+  height: 0;
+  border: none;
+  border-top: 1px solid #707070;
+  opacity: 0.35;
+  margin: 0;
+}
+
+/* 下文字區塊：高度 60px，讓文字在自己的區域內上下居中 */
+.contact-bottom-text {
+  width: 496px;
+  height: 60px;
+  color: #707070;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* 在下半部自己的空間裡垂直置中，不貼線 */
+}
+
+/* --- 4. Footer 區域 (框：1440*60px，字：313*18px) --- */
+.footer-bar {
+  width: 1440px;
+  height: 60px;
+  background-color: #778A50; /* primary */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.footer-text {
+  width: 313px;
+  height: 18px;
+  color: #ffffff;
+  font-size: 11px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+}
+/* ========================================================
+   響應式斷點重排 (RWD: 手機與平板窄螢幕適配)
+   當螢幕寬度小於 1160px 時自動切換為手機最適版型
+   ======================================================== */
+@media screen and (max-width: 1160px) {
+
+  /* 1. 外層容器：自適應螢幕寬度 */
+  body {
+    padding: 15px 0 0 0;
+    overflow-x: hidden;
+  }
+
+  .page-wrapper {
+    width: 100%;
+    max-width: 100%;
+    padding: 0 16px; /* 手機螢幕兩側留出呼吸空間 */
+  }
+
+  /* 2. Header：彈性撐滿，縮小字級避免折行太突兀 */
+  .header-bar {
+    width: 100%;
+    height: auto;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding-bottom: 8px;
+  }
+
+  .logo-text {
+    font-size: 36px;
+    width: auto;
+    height: auto;
+  }
+
+  .header-controls {
+    width: auto;
+    gap: 10px;
+  }
+
+  /* 3. Nav 導覽列：滿版並支援水平滑動或彈性包覆 */
+  /* 導覽列：微調間距與字體大小，讓 5 個選項剛好排滿不被切掉 */
+  .nav-bar {
+    width: 100%;
+    height: 40px;
+    padding: 0 8px;
+    overflow-x: hidden; /* 防止出現水平滾動條 */
+    display: flex;
+    align-items: center;
+  }
+
+  .nav-list {
+    width: 100%;
+    display: flex;
+    justify-content: space-between; /* 5 個按鈕均勻分散排滿整行 */
+    gap: 0;                         /* 取消固定間距，由空間自動均分 */
+    padding: 0;
+  }
+
+  .nav-list a {
+    font-size: 11px;               /* 手機螢幕稍微縮小字級 */
+    padding: 4px 2px;              /* 縮小左右內距 */
+    white-space: nowrap;
+  }
+  /* 4. 主視覺大圖：自適應等比縮放高，不變形 */
+  .main-body {
+    width: 100%;
+    height: auto;
+    gap: 16px;
+  }
+
+  .hero-banner {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1120 / 448; /* 維持原本 2.5:1 的視覺比例 */
+  }
+
+  /* 5. 下方兩欄：核心切換為「上下直條單欄排列」 */
+  .bottom-section {
+    width: 100%;
+    height: auto;
+    flex-direction: column; /* 垂直堆疊：左欄在上、右欄在下 */
+    gap: 20px;
+  }
+
+  /* 左區塊：Vegetables */
+  .veg-section {
+    width: 100%;
+    height: auto;
+    gap: 10px;
+  }
+
+  .veg-header {
+    width: 100%;
+    height: 40px;
+  }
+
+  /* 三個小圖卡：在手機上平分 3 等分 */
+  .veg-cards {
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
+
+  .veg-card-item {
+    width: 100%;
+    height: auto;
+  }
+
+  .veg-card-item img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 165 / 140; /* 維持原本卡片圖片長寬比 */
+  }
+
+  .veg-card-textbg {
+    width: 100%;
+    height: auto;
+    min-height: 90px;
+    padding: 8px;
+  }
+
+  .veg-card-textbox {
+    width: 100%;
+    height: auto;
+    font-size: 11px;
+    line-height: 1.35;
+  }
+
+  /* 右區塊：Contact */
+  .contact-section {
+    width: 100%;
+    height: auto;
+    gap: 10px;
+  }
+
+  .contact-header {
+    width: 100%;
+    height: 40px;
+  }
+
+  .contact-card-bg {
+    width: 100%;
+    height: auto;
+    padding: 20px 16px;
+    gap: 12px;
+  }
+
+  .contact-top-text {
+    width: 100%;
+    height: auto;
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
+  .contact-divider {
+    width: 100%;
+  }
+
+  .contact-bottom-text {
+    width: 100%;
+    height: auto;
+    font-size: 12px;
+    line-height: 1.6;
+  }
+
+  /* 6. Footer 頁尾：滿版自適應 */
+  .footer-bar {
+    width: 100%;
+    height: 50px;
+    margin-top: 24px;
+    padding: 0 10px;
+  }
+
+  .footer-text {
+    width: 100%;
+    font-size: 10px;
+    text-align: center;
+  }
+}
+/* 自訂彈窗遮罩 */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.45);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+/* 彈窗卡片本體 */
+.modal-box {
+  background-color: #F7F6DA;
+  border: 2px solid #778A50;
+  padding: 24px 28px;
+  border-radius: 6px;
+  text-align: center;
+  max-width: 360px;
+  width: 85%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.modal-box h3 {
+  color: #778A50;
+  font-size: 18px;
+  font-weight: 900;
+  margin-bottom: 12px;
+}
+
+.modal-box p {
+  color: #707070;
+  font-size: 13px;
+  line-height: 1.6;
+  margin-bottom: 18px;
+}
+
+.modal-box strong {
+  color: #778A50;
+}
+
+/* 確定按鈕 */
+.modal-btn {
+  background-color: #778A50;
+  color: #ffffff;
+  border: none;
+  padding: 6px 20px;
+  font-size: 13px;
+  font-weight: 700;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.modal-btn:hover {
+  background-color: #5c6c3c;
+}
